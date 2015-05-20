@@ -14,6 +14,12 @@ class RecipesTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for index in 1...15 {
+            var recipe = Recipe(name: "Test Recipe \(index)")
+            recipes.append([recipe])
+            println(recipe.name!)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
