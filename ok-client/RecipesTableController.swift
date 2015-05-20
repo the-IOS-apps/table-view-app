@@ -9,8 +9,12 @@
 import UIKit
 
 class RecipesTableController: UITableViewController {
-
+    
+    // MARK: - Variables
+    
     var recipes = [[Recipe]]()
+
+    // MARK: - LifeCicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,17 @@ class RecipesTableController: UITableViewController {
             recipes.append([recipe])
             println(recipe.name!)
         }
+
+        // ******************************************
+        
+        // main_queue = dispatch_get_main_queue()
+        // closure = { ... }
+        // dispatch_async(main_queue, closure)
+
+        // Method for reloading TableView
+        // self.tableView.reloadData()
+        
+        // ******************************************
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,18 +48,18 @@ class RecipesTableController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    // MARK: - TableVewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return recipes.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return recipes[section].count
     }
 
     /*
