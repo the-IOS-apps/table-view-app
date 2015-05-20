@@ -13,6 +13,10 @@ class RecipesTableController: UITableViewController {
     // MARK: - Variables
     
     var recipes = [[Recipe]]()
+    
+    private struct Storyboard {
+        static let CellReuseIndex = "Recipe"
+    }
 
     // MARK: - LifeCicle
     
@@ -62,15 +66,14 @@ class RecipesTableController: UITableViewController {
         return recipes[section].count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIndex, forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
