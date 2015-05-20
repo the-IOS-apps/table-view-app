@@ -71,6 +71,8 @@ class RecipesTableController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIndex, forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
+        let recipe = recipes[indexPath.section][indexPath.row]
+        cell.textLabel?.text = recipe.content
 
         return cell
     }

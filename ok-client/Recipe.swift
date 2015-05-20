@@ -9,9 +9,11 @@
 import Foundation
 
 class Recipe {
-    var name: String?
+    var name:    String?
+    var content: String?
     
-    init(name:String?) {
-        self.name = name
+    init(name: String?, content: String?) {
+        self.name    = name
+        self.content = content
     }
 }
