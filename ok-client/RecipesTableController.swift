@@ -10,6 +10,8 @@ import UIKit
 
 class RecipesTableController: UITableViewController {
 
+    var recipes = [[Recipe]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
