@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		865F4C871B0CD7E3000E2961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F4C861B0CD7E3000E2961 /* AppDelegate.swift */; };
-		865F4C891B0CD7E3000E2961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F4C881B0CD7E3000E2961 /* ViewController.swift */; };
 		865F4C8C1B0CD7E3000E2961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 865F4C8A1B0CD7E3000E2961 /* Main.storyboard */; };
 		865F4C8E1B0CD7E3000E2961 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865F4C8D1B0CD7E3000E2961 /* Images.xcassets */; };
 		865F4C911B0CD7E3000E2961 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 865F4C8F1B0CD7E3000E2961 /* LaunchScreen.xib */; };
 		865F4C9D1B0CD7E3000E2961 /* ok_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F4C9C1B0CD7E3000E2961 /* ok_clientTests.swift */; };
+		865F4CA71B0CD912000E2961 /* RecipesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F4CA61B0CD912000E2961 /* RecipesTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		865F4C811B0CD7E3000E2961 /* ok-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ok-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		865F4C851B0CD7E3000E2961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		865F4C861B0CD7E3000E2961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		865F4C881B0CD7E3000E2961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		865F4C8B1B0CD7E3000E2961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		865F4C8D1B0CD7E3000E2961 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		865F4C901B0CD7E3000E2961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		865F4C961B0CD7E3000E2961 /* ok-clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ok-clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		865F4C9B1B0CD7E3000E2961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		865F4C9C1B0CD7E3000E2961 /* ok_clientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ok_clientTests.swift; sourceTree = "<group>"; };
+		865F4CA61B0CD912000E2961 /* RecipesTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +77,8 @@
 		865F4C831B0CD7E3000E2961 /* ok-client */ = {
 			isa = PBXGroup;
 			children = (
-				865F4C861B0CD7E3000E2961 /* AppDelegate.swift */,
-				865F4C881B0CD7E3000E2961 /* ViewController.swift */,
 				865F4C8A1B0CD7E3000E2961 /* Main.storyboard */,
-				865F4C8D1B0CD7E3000E2961 /* Images.xcassets */,
-				865F4C8F1B0CD7E3000E2961 /* LaunchScreen.xib */,
+				865F4CA61B0CD912000E2961 /* RecipesTableController.swift */,
 				865F4C841B0CD7E3000E2961 /* Supporting Files */,
 			);
 			path = "ok-client";
@@ -90,6 +87,9 @@
 		865F4C841B0CD7E3000E2961 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				865F4C8F1B0CD7E3000E2961 /* LaunchScreen.xib */,
+				865F4C8D1B0CD7E3000E2961 /* Images.xcassets */,
+				865F4C861B0CD7E3000E2961 /* AppDelegate.swift */,
 				865F4C851B0CD7E3000E2961 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				865F4C891B0CD7E3000E2961 /* ViewController.swift in Sources */,
+				865F4CA71B0CD912000E2961 /* RecipesTableController.swift in Sources */,
 				865F4C871B0CD7E3000E2961 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
