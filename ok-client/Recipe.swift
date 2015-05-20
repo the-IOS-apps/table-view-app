@@ -9,11 +9,13 @@
 import Foundation
 
 class Recipe {
-    var name:    String?
+    var title:   String?
+    var intro:   String?
     var content: String?
     
-    init(name: String?, content: String?) {
-        self.name    = name
+    init(title: String?, intro: String?, content: String?) {
+        self.title   = title
+        self.intro   = intro
         self.content = content
     }
 }

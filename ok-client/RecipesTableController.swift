@@ -24,9 +24,14 @@ class RecipesTableController: UITableViewController {
         super.viewDidLoad()
         
         for index in 1...15 {
-            var recipe = Recipe(name: "Test Recipe \(index)")
+            var recipe = Recipe(
+                title:   "Test Recipe \(index)",
+                intro:   "Test Recipe Intro \(index)",
+                content: "Test Recipe COntent \(index)"
+            )
+            
             recipes.append([recipe])
-            println(recipe.name!)
+            println(recipe.title!)
         }
 
         // ******************************************
@@ -72,7 +77,8 @@ class RecipesTableController: UITableViewController {
 
         // Configure the cell...
         let recipe = recipes[indexPath.section][indexPath.row]
-        cell.textLabel?.text = recipe.content
+        cell.textLabel?.text = recipe.title
+        cell.detailTextLabel?.text = recipe.intro
 
         return cell
     }
