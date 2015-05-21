@@ -12,6 +12,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" id="0Uh-9W-3mT">
+                            <rect key="frame" x="0.0" y="-30" width="600" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recipe" textLabel="TD9-Mw-jLJ" detailTextLabel="E0H-Rg-eQQ" style="IBUITableViewCellStyleSubtitle" id="RR6-I3-s4d">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -39,7 +45,7 @@
                             <outlet property="delegate" destination="5Pn-fs-Q1b" id="wKq-Ad-Tcp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="R2P-eR-EZn"/>
+                    <navigationItem key="navigationItem" prompt="Open Cook Recipes" id="R2P-eR-EZn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTx-cv-6sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
