@@ -46,6 +46,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" prompt="Open Cook Recipes" id="R2P-eR-EZn"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="0Uh-9W-3mT" id="Eiv-dv-lPA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTx-cv-6sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

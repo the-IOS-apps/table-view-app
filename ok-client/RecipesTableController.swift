@@ -8,32 +8,66 @@
 
 import UIKit
 
-class RecipesTableController: UITableViewController {
+class RecipesTableController: UITableViewController, UITextFieldDelegate {
     
-    // MARK: - Variables
+    // MARK: - VARIABLES
     
     var recipes = [[Recipe]]()
+    var searchText:String? = "cupcake" {
+        didSet {
+            searchTextField?.text = searchText
+            recipes.removeAll()
+            refresh()
+            tableView.reloadData()
+        }
+    }
     
     private struct Storyboard {
         static let CellReuseIndex = "Recipe"
     }
 
-    // MARK: - LifeCicle
+    // MARK: - OUTLETS
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet{
+            searchTextField.delegate = self
+            searchTextField.text = searchText
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == searchTextField {
+            textField.resignFirstResponder()
+            searchText = textField.text
+        }
+
+        return true
+    }
+    
+    // MARK: - ACTIONS
+
+    // MARK: - COMMON FUNCTIONS
+
+    func refresh() {
         for index in 1...15 {
+            var prefix = searchText!
             var recipe = Recipe(
-                title:   "Test Recipe \(index)",
-                intro:   "Test Recipe Intro \(index)",
-                content: "Test Recipe COntent \(index)"
+                title:   "\(prefix) Recipe \(index)",
+                intro:   "\(prefix) Recipe Intro \(index)",
+                content: "\(prefix) Recipe COntent \(index)"
             )
             
             recipes.append([recipe])
             println(recipe.title!)
         }
-
+    }
+    
+    // MARK: - LIFE-CICLE
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        refresh()
+        
         // ******************************************
         
         // main_queue = dispatch_get_main_queue()
