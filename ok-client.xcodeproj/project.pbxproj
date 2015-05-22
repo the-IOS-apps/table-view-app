@@ -25,6 +25,41 @@
 			remoteGlobalIDString = 865F4C801B0CD7E3000E2961;
 			remoteInfo = "ok-client";
 		};
+		865F4CB71B0F7E00000E2961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		865F4CB91B0F7E00000E2961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		865F4CBB1B0F7E00000E2961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		865F4CBD1B0F7E00000E2961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire OSX Tests";
+		};
+		865F4CBF1B0F7E66000E2961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +75,7 @@
 		865F4CA61B0CD912000E2961 /* RecipesTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableController.swift; sourceTree = "<group>"; };
 		865F4CA81B0CDD54000E2961 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		865F4CAA1B0F675A000E2961 /* log_method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = log_method.swift; sourceTree = "<group>"; };
+		865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +122,7 @@
 				865F4CAA1B0F675A000E2961 /* log_method.swift */,
 				865F4CA81B0CDD54000E2961 /* Recipe.swift */,
 				865F4C841B0CD7E3000E2961 /* Supporting Files */,
+				865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */,
 			);
 			path = "ok-client";
 			sourceTree = "<group>";
@@ -118,6 +155,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		865F4CB11B0F7E00000E2961 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				865F4CB81B0F7E00000E2961 /* Alamofire.framework */,
+				865F4CBA1B0F7E00000E2961 /* Alamofire.framework */,
+				865F4CBC1B0F7E00000E2961 /* Alamofire iOS Tests.xctest */,
+				865F4CBE1B0F7E00000E2961 /* Alamofire OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +180,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				865F4CC01B0F7E66000E2961 /* PBXTargetDependency */,
 			);
 			name = "ok-client";
 			productName = "ok-client";
@@ -185,6 +234,12 @@
 			mainGroup = 865F4C781B0CD7E3000E2961;
 			productRefGroup = 865F4C821B0CD7E3000E2961 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 865F4CB11B0F7E00000E2961 /* Products */;
+					ProjectRef = 865F4CB01B0F7E00000E2961 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				865F4C801B0CD7E3000E2961 /* ok-client */,
@@ -192,6 +247,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		865F4CB81B0F7E00000E2961 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 865F4CB71B0F7E00000E2961 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		865F4CBA1B0F7E00000E2961 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 865F4CB91B0F7E00000E2961 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		865F4CBC1B0F7E00000E2961 /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = 865F4CBB1B0F7E00000E2961 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		865F4CBE1B0F7E00000E2961 /* Alamofire OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire OSX Tests.xctest";
+			remoteRef = 865F4CBD1B0F7E00000E2961 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		865F4C7F1B0CD7E3000E2961 /* Resources */ = {
@@ -240,6 +326,11 @@
 			isa = PBXTargetDependency;
 			target = 865F4C801B0CD7E3000E2961 /* ok-client */;
 			targetProxy = 865F4C971B0CD7E3000E2961 /* PBXContainerItemProxy */;
+		};
+		865F4CC01B0F7E66000E2961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 865F4CBF1B0F7E66000E2961 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -419,6 +510,7 @@
 				865F4CA21B0CD7E3000E2961 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		865F4CA31B0CD7E3000E2961 /* Build configuration list for PBXNativeTarget "ok-clientTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +519,7 @@
 				865F4CA51B0CD7E3000E2961 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
