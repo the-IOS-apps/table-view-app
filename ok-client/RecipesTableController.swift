@@ -9,15 +9,27 @@
 import UIKit
 
 class RecipesTableController: UITableViewController, UITextFieldDelegate {
+  
+    func log(let str:String?){ println(str) }
     
     // MARK: - VARIABLES
     
     var recipes = [[Recipe]]()
     var searchText:String? = "cupcake" {
         didSet {
+            log("VAR: search text changed")
+            
+            // Update text input
+            // Just to be ensured
             searchTextField?.text = searchText
+            
+            // Cleanup Array
             recipes.removeAll()
+            
+            // Rebuild Array
             refresh()
+
+            // Table view reload
             tableView.reloadData()
         }
     }
@@ -28,20 +40,57 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
 
     // MARK: - OUTLETS
     
+    
+    
     @IBOutlet weak var searchTextField: UITextField! {
         didSet{
+            log("UI field is set/ DELEGATE")
+
+            // link with this Controller for input processing with `textFieldShouldReturn`
             searchTextField.delegate = self
+            
+            // set default value
             searchTextField.text = searchText
         }
     }
     
+    // on keyboard will be appeared
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        log("textFieldShouldBeginEditing")
+        return true
+    }
+    
+    // on keyboard is appeared
+    func textFieldDidBeginEditing(textField: UITextField) {
+        log("textFieldDidBeginEditing")
+    }
+    
+    // Q: is it the just place to process all text fields of this Controllers?
+    // hm!
+    // Event `on enter` for input field
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        log("==============================================")
+        log("textFieldShouldReturn: UI field some action")
+        
         if textField == searchTextField {
+            // it's just close keyboard
             textField.resignFirstResponder()
+            
+            // set new value of variable
             searchText = textField.text
         }
 
         return true
+    }
+    
+    // Custom input field event `on change`
+    func textFieldDidChange(textField: UITextField) {
+        log("text field did chenged!")
+        
+        if textField == searchTextField {
+            // set new value of variable
+            searchText = textField.text
+        }
     }
     
     // MARK: - ACTIONS
@@ -49,6 +98,8 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
     // MARK: - COMMON FUNCTIONS
 
     func refresh() {
+        log("REFRESH: build and set recipes")
+        
         for index in 1...15 {
             var prefix = searchText!
             var recipe = Recipe(
@@ -58,7 +109,6 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
             )
             
             recipes.append([recipe])
-            println(recipe.title!)
         }
     }
     
@@ -66,7 +116,11 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        log("viewDidLoad")
         refresh()
+        
+        // Q: where and when outlets are available?
+        searchTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
         // ******************************************
         
@@ -96,12 +150,14 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
+        log("Table SECTIONS calcualtion")
         return recipes.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        log("Table ROWS in SECTION count calcualtion")
         return recipes[section].count
     }
 
@@ -114,6 +170,7 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
         cell.textLabel?.text = recipe.title
         cell.detailTextLabel?.text = recipe.intro
 
+        log("CELL building")
         return cell
     }
 
