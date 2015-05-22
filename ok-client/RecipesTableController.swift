@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class RecipesTableController: UITableViewController, UITextFieldDelegate {
     // MARK: - VARIABLES
@@ -56,7 +57,7 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
     // After instantiation and outlet-setting
     override func viewDidLoad() {
         log("viewDidLoad")
-
+        
         super.viewDidLoad()
         refresh()
 
@@ -125,15 +126,27 @@ class RecipesTableController: UITableViewController, UITextFieldDelegate {
     func refresh() {
         log("REFRESH: build and set recipes")
 
-        for index in 1...15 {
-            var prefix = searchText!
-            var recipe = Recipe(
-                title:   "\(prefix) Recipe \(index)",
-                intro:   "\(prefix) Recipe Intro \(index)",
-                content: "\(prefix) Recipe COntent \(index)"
-            )
+        let prefix = self.searchText!
+        let par_page = 10
 
-            recipes.append([recipe])
+        Alamofire.request(
+            .GET,
+            "http://open-cook.ru/api/recipes.json",
+            parameters: ["per_page": par_page]
+        ).responseJSON { (_, _, json_data, _) in
+            let json = JSON(json_data!)
+            
+            for (index, item) in json {
+                
+                var recipe = Recipe(
+                    title:   item["title"].string,
+                    intro:   item["image"].string,
+                    content: item["intro"].string
+                )
+
+                self.recipes.append([recipe])
+                self.tableView.reloadData()
+            }
         }
     }
 

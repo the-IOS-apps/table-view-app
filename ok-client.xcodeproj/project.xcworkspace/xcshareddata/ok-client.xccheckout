@@ -14,6 +14,8 @@
 		<string>https://github.com/Alamofire/Alamofire.git</string>
 		<key>8295C2526DD2A9F02789BEF248498B8CAF88297E</key>
 		<string>github.com:the-IOS-apps/table-view-app.git</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>github.com:SwiftyJSON/SwiftyJSON.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ok-client.xcodeproj</string>
@@ -23,6 +25,8 @@
 		<string>../..Alamofire/</string>
 		<key>8295C2526DD2A9F02789BEF248498B8CAF88297E</key>
 		<string>../..</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>../..SwiftyJSON/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:the-IOS-apps/table-view-app.git</string>
@@ -47,6 +51,14 @@
 			<string>8295C2526DD2A9F02789BEF248498B8CAF88297E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ok-client</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftyJSON</string>
 		</dict>
 	</array>
 </dict>
